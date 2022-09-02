@@ -1,0 +1,15 @@
+:root {
+    --color-primary: #6e4040;
+    --color-secondary: #0a0808;
+    --font-primary: 'Roboto', sans-serif;
+}
+
+html,
+body {
+    font-size: 16px;
+    height: 100%;
+}
+
+body {
+    font-family: var(--font-primary);
+}
