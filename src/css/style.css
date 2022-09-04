@@ -1,6 +1,7 @@
 :root {
     --color-primary: #6e4040;
     --color-secondary: #0a0808;
+    --color-ternary: #ffffff;
     --font-primary: 'Roboto', sans-serif;
 }
 
@@ -12,4 +13,84 @@ body {
 
 body {
     font-family: var(--font-primary);
+    color: var(--color-secondary);
+}
+
+.container {
+    margin: 0 2rem;
+}
+
+.btn {
+    width: 100%;
+    padding: 1rem 0;
+    font-size: 1.5rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    border: none;
+    border-radius: 0.5rem;
+    background-color: #6e4040;
+    color: var(--color-ternary);
+    cursor: pointer;
+    transition: 200ms filter;
+}
+.btn:hover {
+    filter: brightness(1.2);
+}
+
+.about-newsletter {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-image: url('../images/guitars.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 700px;
+}
+
+.about-newsletter .img-guitars {
+    width: 100%;
+}
+
+.about-newsletter div {
+    background-color: var(--color-ternary);
+    padding: 1.5rem;
+    margin: 0 1rem;
+    text-align: center;
+    border-radius: 1rem;
+    box-shadow: 0 2px 0.5rem var(--color-secondary);
+}
+
+.about-newsletter div header .title-main {
+    font-size: 2rem;
+    font-weight: 600;
+}
+
+.about-newsletter div header .subtitle {
+    font-size: 1.5rem;
+    margin: 1rem 0 2rem;
+}
+
+.about-newsletter div footer ul.socials {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    list-style: none;
+    width: 50%;
+    margin: 2rem auto 0;
+}
+
+.about-newsletter div footer ul.socials li {
+    transition: 200ms transform;
+}
+
+.about-newsletter div footer ul.socials li:hover {
+    transform: scale(1.2);
+}
+
+.about-newsletter div footer ul.socials li a {
+    text-decoration: none;
+}
+
+.about-newsletter div footer ul.socials li a img {
+    width: 2rem;
 }
