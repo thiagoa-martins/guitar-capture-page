@@ -22,7 +22,7 @@ body {
 
 .btn {
     width: 100%;
-    padding: 1rem 0;
+    padding: 1.5rem 0;
     font-size: 1.5rem;
     font-weight: bold;
     text-transform: uppercase;
@@ -44,7 +44,6 @@ body {
     background-image: url('../images/guitars.jpg');
     background-repeat: no-repeat;
     background-size: cover;
-    height: 700px;
 }
 
 .about-newsletter .img-guitars {
@@ -53,20 +52,32 @@ body {
 
 .about-newsletter div {
     background-color: var(--color-ternary);
-    padding: 1.5rem;
-    margin: 0 1rem;
+    padding: 1rem;
+    margin: 1rem;
     text-align: center;
     border-radius: 1rem;
     box-shadow: 0 2px 0.5rem var(--color-secondary);
 }
 
+.about-newsletter div header img.guitar-blue {
+    width: 100%;
+    border-radius: 1rem;
+}
+
 .about-newsletter div header .title-main {
     font-size: 2rem;
-    font-weight: 600;
+    font-weight: 400;
+    margin-top: 2rem;
+    line-height: 2.5rem;
+}
+
+.about-newsletter div header .title-main span {
+    font-weight: 500;
 }
 
 .about-newsletter div header .subtitle {
     font-size: 1.5rem;
+    font-weight: 300;
     margin: 1rem 0 2rem;
 }
 
