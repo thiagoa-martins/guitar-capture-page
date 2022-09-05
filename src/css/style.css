@@ -185,3 +185,32 @@ ul.socials {
     text-align: justify;
     margin-bottom: 1rem;
 }
+
+.footer {
+    padding: 1rem 0;
+}
+
+.footer ul.socials {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    list-style: none;
+    width: 50%;
+    margin: 2rem auto 0;
+}
+
+.footer ul.socials li {
+    transition: 200ms transform;
+}
+
+.footer ul.socials li:hover {
+    transform: scale(1.2);
+}
+
+.footer ul.socials li a {
+    text-decoration: none;
+}
+
+.footer ul.socials li a img {
+    width: 2rem;
+}
