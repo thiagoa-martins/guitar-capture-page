@@ -54,7 +54,8 @@ body {
     width: 100%;
 }
 
-.about-newsletter .about-newsletter-container .newsletter-box {
+.about-newsletter .about-newsletter-container .newsletter-box,
+.subscribe-newsletter form {
     background-color: var(--color-ternary);
     padding: 1rem;
     margin: 1rem;
@@ -63,19 +64,22 @@ body {
     box-shadow: 0 2px 0.5rem var(--color-secondary);
 }
 
-.about-newsletter .about-newsletter-container .newsletter-box header img.guitar-blue {
+.about-newsletter .about-newsletter-container .newsletter-box header
+img.guitar-blue {
     width: 100%;
     border-radius: 1rem;
 }
 
-.about-newsletter .about-newsletter-container .newsletter-box header .title-main {
+.about-newsletter .about-newsletter-container .newsletter-box header
+.title-main {
     font-size: 2rem;
     font-weight: 400;
     margin-top: 2rem;
     line-height: 2.5rem;
 }
 
-.about-newsletter .about-newsletter-container .newsletter-box header .title-main span {
+.about-newsletter .about-newsletter-container .newsletter-box header
+.title-main span {
     font-weight: 500;
 }
 
@@ -85,7 +89,8 @@ body {
     margin: 1rem 0 2rem;
 }
 
-.about-newsletter .about-newsletter-container .newsletter-box footer ul.socials {
+.about-newsletter .about-newsletter-container .newsletter-box footer
+ul.socials {
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -108,4 +113,45 @@ body {
 
 .about-newsletter .newsletter-box footer ul.socials li a img {
     width: 2rem;
+}
+
+.subscribe-newsletter {
+    display: flex;
+    justify-content: center;
+}
+
+.subscribe-newsletter form .title {
+    font-size: 1.5rem;
+    font-weight: 500;
+    color: var(--color-secondary);
+    border-radius: 0.5rem;
+    margin: 1rem 0 2rem;
+    line-height: 2.5rem;
+}
+
+.subscribe-newsletter form input,
+.subscribe-newsletter form button {
+    display: block;
+    box-sizing: border-box;
+    width: 100%;
+    padding: 1rem;
+    border-radius: 0.5rem;
+}
+
+.subscribe-newsletter form input {
+    margin: 1rem 0;
+    border: 2px solid #cccccc;
+    font-size: 1rem;
+}
+
+.subscribe-newsletter form input::placeholder {
+    font-size: 1rem;
+}
+
+.subscribe-newsletter form .spam {
+    display: block;
+    text-transform: uppercase;
+    margin-top: 1rem;
+    font-size: 0.8rem;
+    font-weight: 500;
 }
