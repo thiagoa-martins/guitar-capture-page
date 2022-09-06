@@ -177,6 +177,12 @@ ul.socials {
     font-size: 1rem;
 }
 
+.about-newsletter .subscribe-newsletter form .message {
+    display: block;
+    margin-bottom: 1rem;
+    color: #b11f1f;
+}
+
 .about-newsletter .subscribe-newsletter form .spam {
     display: block;
     text-transform: uppercase;
