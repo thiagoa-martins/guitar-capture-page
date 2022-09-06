@@ -165,6 +165,14 @@ ul.socials {
     font-size: 1rem;
 }
 
+.about-newsletter .subscribe-newsletter form input:focus {
+    outline-style: solid;
+    outline-width: 2px;
+    outline-color: var(--color-primary);
+    border: 1px solid var(--color-primary);
+}
+
+
 .about-newsletter .subscribe-newsletter form input::placeholder {
     font-size: 1rem;
 }
