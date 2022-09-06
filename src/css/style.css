@@ -18,12 +18,11 @@ body {
 
 .btn {
     width: 100%;
-    padding: 1.5rem 0;
+    padding: 1.5rem 0.5rem;
     font-size: 1.5rem;
     font-weight: bold;
     text-transform: uppercase;
     border: none;
-    border-radius: 0.5rem;
     background-color: #6e4040;
     color: var(--color-ternary);
     cursor: pointer;
@@ -56,23 +55,21 @@ body {
 }
 
 .about-newsletter .about-newsletter-container .newsletter-box.hidden {
-    opacity: 0;
+    display: none;
 }
 
 .about-newsletter .about-newsletter-container .newsletter-box,
 .subscribe-newsletter form {
     background-color: var(--color-ternary);
     padding: 1rem;
-    margin: 1rem;
+    margin: 0.5rem;
     text-align: center;
-    border-radius: 1rem;
     box-shadow: 0 2px 0.5rem var(--color-secondary);
 }
 
 .about-newsletter .about-newsletter-container .newsletter-box header
 img.guitar-blue {
     width: 100%;
-    border-radius: 1rem;
 }
 
 .about-newsletter .about-newsletter-container .newsletter-box header
@@ -122,8 +119,6 @@ ul.socials {
 
 .about-newsletter .subscribe-newsletter {
     display: none;
-    position: absolute;
-    top: 0;
 }
 
 .about-newsletter .subscribe-newsletter form {
@@ -132,16 +127,19 @@ ul.socials {
 
 .about-newsletter .subscribe-newsletter form .newsletter-close {
     position: absolute;
-    top: 0.2rem;
-    right: 0.2rem;
-    font-weight: bold;
+    top: 0.5rem;
+    right: 0.3rem;
+    font-weight: 500;
     font-size: 1.5rem;
+    padding: 0 0.3rem;
+    background-color: var(--color-secondary);
+    color: var(--color-ternary);
+    border-radius: 50%;
     cursor: pointer;
 }
 
 .about-newsletter .subscribe-newsletter form img.guitar-blue {
     width: 100%;
-    border-radius: 1rem;
 }
 
 .about-newsletter .subscribe-newsletter form .title {
@@ -158,12 +156,11 @@ ul.socials {
     display: block;
     box-sizing: border-box;
     width: 100%;
-    padding: 1rem;
-    border-radius: 0.5rem;
 }
 
 .about-newsletter .subscribe-newsletter form input {
     margin: 1rem 0;
+    padding: 1rem;
     border: 2px solid #cccccc;
     font-size: 1rem;
 }
@@ -186,7 +183,7 @@ ul.socials {
 }
 
 .last-tips .container {
-    padding: 0 1rem;
+    padding: 0 2rem;
 }
 
 .last-tips header .title,
