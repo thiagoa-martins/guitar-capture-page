@@ -14,10 +14,6 @@ form.addEventListener("submit", event => {
     
     const username = event.target.username.value;
     const email = event.target.email.value;
-
-
-
-    // console.log(username, email);
 });
 
 article.addEventListener("click", event => {
@@ -27,10 +23,10 @@ article.addEventListener("click", event => {
         className === classNameOfClickedElement);    
 
     if (shouldCloseDiv) {
-        console.log(classNameOfClickedElement);
+        div.style.display = "none";
+        divNewsletterBox.classList.remove("hidden");
     }
 });
 
-console.log(article)
 
 
