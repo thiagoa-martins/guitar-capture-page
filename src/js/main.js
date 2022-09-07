@@ -3,6 +3,8 @@ const div = document.querySelector(".subscribe-newsletter");
 const divNewsletterBox = document.querySelector(".newsletter-box");
 const form = document.querySelector("#form");
 const article = document.querySelector(".about-newsletter");
+const fieldset = document.querySelector("#enter-data");
+const divSuccess = document.querySelector(".message-success");
 
 button.addEventListener("click", () => {
     div.style.display = "block";
@@ -13,13 +15,13 @@ form.addEventListener("submit", event => {
     event.preventDefault();
     
     let hasError = false;
-    const username = event.target.username.value;
-    const email = event.target.email.value;
+    const inputName = event.target.username;
+    const inputEmail = event.target.email;
 
     const usernameRegex = /^[a-zA-Z ]{4,}$/;
-    const usernameIsValid = usernameRegex.test(username);
+    const usernameIsValid = usernameRegex.test(inputName.value);
     const emailRegex = /^[a-zA-Z0-9@.]{8,}$/;
-    const emailIsValid = emailRegex.test(email);
+    const emailIsValid = emailRegex.test(inputEmail.value);
     
     if (!usernameIsValid) {
         hasError = true;
@@ -46,7 +48,14 @@ form.addEventListener("submit", event => {
         const label = event.target.email.nextElementSibling;
         label.textContent = "";
     }
-    
+
+    if (!hasError) {
+        inputName.value = "";
+        inputEmail.value = "";
+
+        fieldset.style.display = "none";
+        divSuccess.style.display = "block";
+    }
 });
 
 article.addEventListener("click", event => {
@@ -58,8 +67,11 @@ article.addEventListener("click", event => {
     if (shouldCloseDiv) {
         div.style.display = "none";
         divNewsletterBox.classList.remove("hidden");
+        fieldset.style.display = "block";
     }
 });
+
+
 
 
 
