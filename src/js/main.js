@@ -9,125 +9,116 @@ const inputs = document.querySelectorAll("input");
 
 let hasError = false;
 
-button.addEventListener("click", () => {
+button.focus();
+
+const showSubscribeNewsletter = () => {
     div.style.display = "block";
     divNewsletterBox.classList.add("hidden");
-});
+};
 
-const handleSubmit = event => {
-    event.preventDefault();
-    
-    const inputName = event.target.username;
-    const inputEmail = event.target.email;
+const checkError = input => {
+    if (input.classList.contains("error")) {
+        hasError = true;
+    }
+}
 
+const errorFeedback = input => {
+    hasError = true;
+
+    const label = input.nextElementSibling;
+    label.textContent = `O e-mail deve ser no formato
+    'nomedoemail@dominio.com' e entre 10 e 256 caracteres.`;
+    input.setAttribute("class", "error");
+    input.focus();
+};
+
+const successFeedback = input => {
+    hasError = false;
+
+    const label = input.nextElementSibling;
+    label.textContent = "";
+    input.setAttribute("class", "success");
+};
+
+const validateUsername = inputName => {
     const usernameRegex = /^[a-zA-ZÀ-ú\ ]{4,20}$/;
     const usernameIsValid = usernameRegex.test(inputName.value);
-    const emailRegex = /^(?=.*[\@])[a-zA-Z0-9\@]{10,256}$/;
-    const emailIsValid = emailRegex.test(inputEmail.value);
-    
+
     if (!usernameIsValid) {
-        hasError = true;
-
-        const label = event.target.username.nextElementSibling;
-        label.textContent = `O nome de usuário deve ter somente letras e entre
-        4 caracteres e 20 caracteres.`
-        inputName.setAttribute("class", "error");
-        inputName.focus();
+       errorFeedback(inputName);
     } else {
-        hasError = false;
-
-        const label = event.target.username.nextElementSibling;
-        label.textContent = "";
-    }
-
-    if (!emailIsValid) {
-        hasError = true;
-
-        const label = event.target.email.nextElementSibling;
-        label.textContent = `O e-mail deve ser no formato
-        'nomedoemail@dominio.com' e entre 10 e 256 caracteres.`;
-        inputEmail.setAttribute("class", "error");
-        inputEmail.focus();
-    } else {
-        hasError = false;
-
-        const label = event.target.email.nextElementSibling;
-        label.textContent = "";
-    }
-
-    inputs.forEach(input => {
-        if (input.classList.contains("error")) {
-            console.log("yeh")
-            hasError = true;
-        }
-    });
-
-    if (!hasError) {
-        inputName.value = "";
-        inputEmail.value = "";
-
-        fieldset.style.display = "none";
-        divSuccess.style.display = "block";
+       successFeedback(inputName);
     }
 };
 
-form.addEventListener("submit", handleSubmit);
+const validateEmail = inputEmail => {
+    const emailRegex = /^(?=.*[\@])[a-zA-Z0-9\@]{10,256}$/;
+    const emailIsValid = emailRegex.test(inputEmail.value);
+    
+    if (!emailIsValid) {
+        errorFeedback(inputEmail);
+    } else {
+        successFeedback(inputEmail);
+    }
+};
 
-article.addEventListener("click", event => {
+const clearInputs = event => {
+    event.target.username.value = "";
+    event.target.email.value = "";
+};
+
+const thankYouMessage = () => {
+    fieldset.style.display = "none";
+    divSuccess.style.display = "block";
+};
+
+const handleSubmit = event => {
+    event.preventDefault();
+
+    validateUsername(event.target.username);
+
+    validateEmail(event.target.email);
+
+    inputs.forEach(checkError);
+
+    if (!hasError) {
+        clearInputs(event);
+        thankYouMessage();
+        event.target.close.focus();
+    }
+};
+
+const showNewsletterBox = () => {
+    div.style.display = "none";
+    divNewsletterBox.classList.remove("hidden");
+    fieldset.style.display = "block";
+    divSuccess.style.display = "none";
+    button.focus();
+};
+
+const shouldCloseSubscribeNewsletter = event => {
     const classNameOfClickedElement = event.target.classList[0];
     const classNames = ["newsletter-close", "about-newsletter-container"];
     const shouldCloseDiv = classNames.some(className =>
-        className === classNameOfClickedElement);    
+        className === classNameOfClickedElement);
+        
+        if (shouldCloseDiv) {
+            showNewsletterBox(event);
+        }
+};
 
-    if (shouldCloseDiv) {
-        div.style.display = "none";
-        divNewsletterBox.classList.remove("hidden");
-        fieldset.style.display = "block";
-        divSuccess.style.display = "none";
-    }
-});
+const handleUsernameKeyup = event => {
+    validateUsername(event.target);
+};
 
-form.username.addEventListener("keyup", event => {
-    const inputName = event.target;
-    const usernameRegex = /^[a-zA-ZÀ-ú\ ]{4,20}$/;
-    const usernameIsValid = usernameRegex.test(inputName.value);
-   
-    if (!usernameIsValid) {
-        hasError = true;
+const handleEmailKeyup = event => {
+    validateEmail(event.target);
+};
 
-        const label = event.target.nextElementSibling;
-        label.textContent = `O nome de usuário deve ter somente letras e entre
-        4 caracteres e 20 caracteres.`
-        inputName.setAttribute("class", "error");
-        return;
-    } 
-        hasError = false;
-
-        const label = event.target.nextElementSibling;
-        label.textContent = "";
-        inputName.setAttribute("class", "success");
-});
-
-form.email.addEventListener("keyup", event => {
-    const inputEmail = event.target;
-    
-    const emailRegex = /^(?=.*[\@])[a-zA-Z0-9\@]{10,256}$/;
-    const emailIsValid = emailRegex.test(inputEmail.value);
-
-    if (!emailIsValid) {
-        hasError = true;
-
-        const label = event.target.nextElementSibling;
-        label.textContent = `O e-mail deve ser no formato
-        'nomedoemail@dominio.com' e entre 10 e 256 caracteres.`;
-        inputEmail.setAttribute("class", "error");
-        return;
-    } 
-        hasError = false;
-
-        const label = event.target.nextElementSibling;
-        label.textContent = "";
-        inputEmail.setAttribute("class", "success");
-});
+button.addEventListener("click", showSubscribeNewsletter);
+form.addEventListener("submit", handleSubmit);
+article.addEventListener("click", shouldCloseSubscribeNewsletter);
+form.username.addEventListener("keyup", handleUsernameKeyup);
+form.email.addEventListener("keyup", handleEmailKeyup);
 
 
