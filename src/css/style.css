@@ -27,6 +27,7 @@ body {
     color: var(--color-ternary);
     cursor: pointer;
     transition: 200ms filter;
+    line-height: 2rem;
 }
 .btn:hover {
     filter: brightness(1.2);
@@ -77,7 +78,7 @@ img.guitar-blue {
     font-size: 2rem;
     font-weight: 400;
     margin-top: 2rem;
-    line-height: 2.5rem;
+    line-height: 2.2rem;
 }
 
 .about-newsletter .about-newsletter-container .newsletter-box header
@@ -89,6 +90,7 @@ img.guitar-blue {
     font-size: 1.5rem;
     font-weight: 300;
     margin: 1rem 0 2rem;
+    line-height: 1.8rem;
 }
 
 .about-newsletter .about-newsletter-container .newsletter-box footer
@@ -148,7 +150,7 @@ ul.socials {
     color: var(--color-secondary);
     border-radius: 0.5rem;
     margin: 1rem 0;
-    line-height: 2.5rem;
+    line-height: 2.2rem;
 }
 
 .about-newsletter .subscribe-newsletter form #enter-data {
@@ -176,6 +178,21 @@ ul.socials {
     border: 1px solid var(--color-primary);
 }
 
+.about-newsletter .subscribe-newsletter form input:focus.error,
+.about-newsletter .subscribe-newsletter form input.error {
+    outline-style: solid;
+    outline-width: 2px;
+    outline-color: #b11f1f;
+    border: 1px solid #b11f1f;
+}
+
+.about-newsletter .subscribe-newsletter form input:focus.success {
+    outline-style: solid;
+    outline-width: 2px;
+    outline-color: #148114;
+    border: 1px solid #148114;
+}
+
 .about-newsletter .subscribe-newsletter form input::placeholder {
     font-size: 1rem;
 }
@@ -196,11 +213,13 @@ ul.socials {
 
 .about-newsletter .subscribe-newsletter form .message-success {
     display: none;
-    font-size: 2rem;
+    font-size: 1.5rem;
     font-weight: bold;
-    color: #148114;
+    color: var(--color-ternary);
+    background-color: #148114;
     margin-top: 1rem;
     transition: 200ms display;
+    padding: 1rem;
 };
 
 .last-tips {
