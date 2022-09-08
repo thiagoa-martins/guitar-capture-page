@@ -32,6 +32,7 @@ const handleSubmit = event => {
         label.textContent = `O nome de usuário deve ter somente letras e entre
         4 caracteres e 20 caracteres.`
         inputName.setAttribute("class", "error");
+        inputName.focus();
     } else {
         hasError = false;
 
@@ -46,6 +47,7 @@ const handleSubmit = event => {
         label.textContent = `O e-mail deve ser no formato
         'nomedoemail@dominio.com' e entre 10 e 256 caracteres.`;
         inputEmail.setAttribute("class", "error");
+        inputEmail.focus();
     } else {
         hasError = false;
 
