@@ -20,9 +20,9 @@ const handleSubmit = event => {
     const inputName = event.target.username;
     const inputEmail = event.target.email;
 
-    const usernameRegex = /^[a-zA-Z ]{4,12}$/;
+    const usernameRegex = /^[a-zA-ZÀ-ú\ ]{4,20}$/;
     const usernameIsValid = usernameRegex.test(inputName.value);
-    const emailRegex = /^[a-zA-Z0-9@.]{10,256}$/;
+    const emailRegex = /^(?=.*[\@])[a-zA-Z0-9\@]{10,256}$/;
     const emailIsValid = emailRegex.test(inputEmail.value);
     
     if (!usernameIsValid) {
@@ -30,7 +30,7 @@ const handleSubmit = event => {
 
         const label = event.target.username.nextElementSibling;
         label.textContent = `O nome de usuário deve ter somente letras e entre
-        4 caracteres e 12 caracteres.`
+        4 caracteres e 20 caracteres.`
         inputName.setAttribute("class", "error");
     } else {
         hasError = false;
@@ -87,7 +87,7 @@ article.addEventListener("click", event => {
 
 form.username.addEventListener("keyup", event => {
     const inputName = event.target;
-    const usernameRegex = /^[a-zA-Z ]{4,12}$/;
+    const usernameRegex = /^[a-zA-ZÀ-ú\ ]{4,20}$/;
     const usernameIsValid = usernameRegex.test(inputName.value);
    
     if (!usernameIsValid) {
@@ -95,7 +95,7 @@ form.username.addEventListener("keyup", event => {
 
         const label = event.target.nextElementSibling;
         label.textContent = `O nome de usuário deve ter somente letras e entre
-        4 caracteres e 12 caracteres.`
+        4 caracteres e 20 caracteres.`
         inputName.setAttribute("class", "error");
         return;
     } 
@@ -109,7 +109,7 @@ form.username.addEventListener("keyup", event => {
 form.email.addEventListener("keyup", event => {
     const inputEmail = event.target;
     
-    const emailRegex = /^[a-zA-Z0-9@.]{10,256}$/;
+    const emailRegex = /^(?=.*[\@])[a-zA-Z0-9\@]{10,256}$/;
     const emailIsValid = emailRegex.test(inputEmail.value);
 
     if (!emailIsValid) {
