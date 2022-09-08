@@ -129,14 +129,17 @@ ul.socials {
 
 .about-newsletter .subscribe-newsletter form .newsletter-close {
     position: absolute;
+    display: inline-block;
+    width: 2rem;
+    height: 2rem;
     top: 0.5rem;
     right: 0.3rem;
     font-weight: 500;
     font-size: 1.5rem;
-    padding: 0 0.3rem;
     background-color: var(--color-secondary);
     color: var(--color-ternary);
     border-radius: 50%;
+    border: none;
     cursor: pointer;
 }
 
