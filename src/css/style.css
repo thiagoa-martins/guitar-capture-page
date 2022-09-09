@@ -260,6 +260,7 @@ ul.socials {
 
 .footer {
     padding: 1rem 0;
+    text-align: center;
 }
 
 .footer ul.socials {
@@ -285,4 +286,9 @@ ul.socials {
 
 .footer ul.socials li a img {
     width: 2rem;
+}
+
+.footer p {
+    margin-top: 2rem;
+    font-weight: 500;
 }
