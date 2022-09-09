@@ -22,12 +22,11 @@ const checkError = input => {
     }
 }
 
-const errorFeedback = input => {
+const errorFeedback = (input, feedback) => {
     hasError = true;
 
     const label = input.nextElementSibling;
-    label.textContent = `O e-mail deve ser no formato
-    'nomedoemail@dominio.com' e entre 10 e 256 caracteres.`;
+    label.textContent = feedback;
     input.setAttribute("class", "error");
     input.focus();
 };
@@ -45,7 +44,8 @@ const validateUsername = inputName => {
     const usernameIsValid = usernameRegex.test(inputName.value);
 
     if (!usernameIsValid) {
-       errorFeedback(inputName);
+       errorFeedback(inputName, `O nome de usuário deve ter somente letras e entre
+       4 caracteres e 20 caracteres.`);
     } else {
        successFeedback(inputName);
     }
@@ -56,7 +56,8 @@ const validateEmail = inputEmail => {
     const emailIsValid = emailRegex.test(inputEmail.value);
     
     if (!emailIsValid) {
-        errorFeedback(inputEmail);
+        errorFeedback(inputEmail, `O e-mail deve ser no formato
+        'nomedoemail@dominio.com' e entre 10 e 256 caracteres.`);
     } else {
         successFeedback(inputEmail);
     }
