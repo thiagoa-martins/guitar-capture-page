@@ -52,12 +52,12 @@ const validateUsername = inputName => {
 };
 
 const validateEmail = inputEmail => {
-    const emailRegex = /^(?=.*[\@])[a-zA-Z0-9\@]{10,256}$/;
+    const emailRegex = /^(?=.*[\@])(?=.*[\.])[a-zA-Z0-9\@\.]{10,256}$/;
     const emailIsValid = emailRegex.test(inputEmail.value);
     
     if (!emailIsValid) {
-        errorFeedback(inputEmail, `O e-mail deve ser no formato
-        'nomedoemail@dominio.com' e estar entre 10 e 256 caracteres.`);
+        errorFeedback(inputEmail, `O e-mail pode ter letras, números e não deve
+        ter acentos, deve corresponder ao formato 'nomedoemail@dominio.com' e estar entre 10 e 256 caracteres.`);
     } else {
         successFeedback(inputEmail);
     }
