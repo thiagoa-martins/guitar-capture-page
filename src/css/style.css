@@ -202,8 +202,10 @@ ul.socials {
 
 .about-newsletter .subscribe-newsletter form .message {
     display: block;
+    max-width: 660.44px;
     margin-bottom: 1rem;
     color: #b11f1f;
+    line-height: 1.2rem;
 }
 
 .about-newsletter .subscribe-newsletter form .spam {
