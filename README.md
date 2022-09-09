@@ -1,6 +1,6 @@
 # Guitar Capture Page
 
-- O projeto foi desenvolvido com Html, Css e Javascript.
+- O projeto foi desenvolvido com Html, Css e JavaScript.
 
 ## Índice
 
