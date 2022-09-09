@@ -45,7 +45,7 @@ const validateUsername = inputName => {
 
     if (!usernameIsValid) {
        errorFeedback(inputName, `O nome de usuário deve ter somente letras e entre
-       4 caracteres e 20 caracteres.`);
+       4 e 20 caracteres.`);
     } else {
        successFeedback(inputName);
     }
