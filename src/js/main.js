@@ -44,20 +44,20 @@ const validateUsername = inputName => {
     const usernameIsValid = usernameRegex.test(inputName.value);
 
     if (!usernameIsValid) {
-       errorFeedback(inputName, `O nome de usuário deve ter somente letras e entre
-       4 caracteres e 20 caracteres.`);
+       errorFeedback(inputName, `O nome de usuário deve ter somente letras e estar entre
+       4 e 20 caracteres.`);
     } else {
        successFeedback(inputName);
     }
 };
 
 const validateEmail = inputEmail => {
-    const emailRegex = /^(?=.*[\@])[a-zA-Z0-9\@]{10,256}$/;
+    const emailRegex = /^(?=.*[\@])(?=.*[\.])[a-zA-Z0-9\@\.]{10,256}$/;
     const emailIsValid = emailRegex.test(inputEmail.value);
     
     if (!emailIsValid) {
-        errorFeedback(inputEmail, `O e-mail deve ser no formato
-        'nomedoemail@dominio.com' e entre 10 e 256 caracteres.`);
+        errorFeedback(inputEmail, `O e-mail pode ter letras, números e não deve
+        ter acentos, deve corresponder ao formato 'nomedoemail@dominio.com' e estar entre 10 e 256 caracteres.`);
     } else {
         successFeedback(inputEmail);
     }
